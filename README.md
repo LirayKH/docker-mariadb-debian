@@ -8,3 +8,6 @@ $ docker run --name some-mariadb -v <docker_volume_name>:/var/lib/mysql -v <dock
 
 # Many many Thanks
 https://github.com/docker-library/mariadb
+
+# Performance and Tuning Link
+- http://www.tecmint.com/mysql-mariadb-performance-tuning-and-optimization
