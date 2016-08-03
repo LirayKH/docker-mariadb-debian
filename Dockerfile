@@ -3,8 +3,6 @@ FROM debian:jessie
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r mysql && useradd -r -g mysql mysql
 
-COPY my.cnf /etc/mysql/my.cnf
-
 # add gosu for easy step-down from root
 ENV GOSU_VERSION 1.7
 RUN set -x \
@@ -97,5 +95,5 @@ ENTRYPOINT ["docker-entrypoint.sh"]
 EXPOSE 3306
 # Galera ports
 # EXPOSE 4567 4568 4444
-
+COPY my.cnf /etc/mysql/my.cnf
 CMD ["mysqld"]
